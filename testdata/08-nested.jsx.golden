@@ -1,0 +1,51 @@
+import Style from "styled-jsx";
+import styles from "./styles"
+
+export default () => (
+  <div class="jsx-465mAE">
+    <span class="jsx-465mAE">
+      test
+      <style jsx class="jsx-465mAE">
+        {
+          `
+            div {
+              color: red;
+            }
+          ` /* this should not be transpiled */
+        }
+      </style>
+    </span>
+    <Style jsx>{`span.jsx-465mAE{color:red}`}</Style>
+  </div>
+)
+
+export const Test = () => (
+  <div>
+    <span>
+      test
+      <style jsx>
+        {
+          `
+            div {
+              color: red;
+            }
+          ` /* this should not be transpiled */
+        }
+      </style>
+      <Component>
+        <style jsx>
+          {
+            `
+              div {
+                color: red;
+              }
+            ` /* this should not be transpiled */
+          }
+        </style>
+        <style jsx>{styles}</style> {/* this should not be transpiled */}
+      </Component>
+    </span>
+    <Style jsx>{`span.jsx-465mAE{color:red}`}</Style>
+    <style jsx>{styles}</style>
+  </div>
+)

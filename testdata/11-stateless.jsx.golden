@@ -1,0 +1,9 @@
+import Style from "styled-jsx";
+export default () => (
+  <div class="jsx-1CO9YM">
+    <p class="jsx-1CO9YM">test</p>
+    <p class="jsx-1CO9YM">woot</p>
+    <p class="jsx-1CO9YM">woot</p>
+    <Style jsx>{`p.jsx-1CO9YM{color:red}`}</Style>
+  </div>
+)

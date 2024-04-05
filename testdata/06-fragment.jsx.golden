@@ -1,0 +1,37 @@
+import Style from "styled-jsx";
+import React from "react"
+
+export default () => (
+  <>
+    <p class="jsx-4cdhsF">Testing!!!</p>
+    <p className="jsx-4cdhsF foo">Bar</p>
+    <>
+      <h3 id="head" class="jsx-4cdhsF">Title...</h3>
+      <React.Fragment>
+        <p class="jsx-4cdhsF">hello</p>
+        <>
+          <p class="jsx-4cdhsF">foo</p>
+          <p class="jsx-4cdhsF">bar</p>
+        </>
+        <p class="jsx-4cdhsF">world</p>
+      </React.Fragment>
+    </>
+    <Style jsx>{`p.jsx-4cdhsF{color:#0ff}.foo.jsx-4cdhsF{font-size:18px;color:#ff69b4}#head.jsx-4cdhsF{text-decoration:underline}`}</Style>
+  </>
+)
+
+function Component1() {
+  return (
+    <>
+      <div>test</div>
+    </>
+  )
+}
+
+function Component2() {
+  return (
+    <div class="jsx-PdJfA">
+      <Style jsx>{`div.jsx-PdJfA{color:red}`}</Style>
+    </div>
+  )
+}

@@ -1,0 +1,34 @@
+import Style from "styled-jsx";
+const attrs = {
+  id: "test",
+}
+
+const Test1 = () => (
+  <div class="jsx-465mAE">
+    <span {...attrs} data-test="test" class="jsx-465mAE">
+      test
+    </span>
+    <Component />
+    <Style jsx>{`span.jsx-465mAE{color:red}`}</Style>
+  </div>
+)
+
+const Test2 = () => <span>test</span>
+
+const Test3 = () => (
+  <div class="jsx-465mAE">
+    <span class="jsx-465mAE">test</span>
+    <Style jsx>{`span.jsx-465mAE{color:red}`}</Style>
+  </div>
+)
+
+export default class {
+  render() {
+    return (
+      <div class="jsx-4suyyD">
+        <p class="jsx-4suyyD">test</p>
+        <Style jsx>{`p.jsx-4suyyD{color:red}`}</Style>
+      </div>
+    )
+  }
+}

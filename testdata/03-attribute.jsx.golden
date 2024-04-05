@@ -1,0 +1,57 @@
+import Style from "styled-jsx";
+export default () => {
+  const Element = "div"
+  return (
+    <div class="jsx-2yZ49X">
+      <div class="jsx-2yZ49X test" {...test.test} />
+      <div class="jsx-2yZ49X test" {...test.test.test} />
+      <div class="jsx-2yZ49X test" {...this.test.test} />
+      <div data-test="test" class="jsx-2yZ49X" />
+      <div class="jsx-2yZ49X test" />
+      <div class={"jsx-2yZ49X test"} />
+      <div class={`jsx-2yZ49X test`} />
+      <div class={`jsx-2yZ49X test${true ? " test2" : ""}`} />
+      <div class={"jsx-2yZ49X test " + test} />
+      <div class={`jsx-2yZ49X ${["test", "test2"].join(" ")}`} />
+      <div class={`jsx-2yZ49X ${true && "test"}`} />
+      <div class={`jsx-2yZ49X ${test ? "test" : null}`} />
+      <div class={`jsx-2yZ49X ${test}`} />
+      <div class={`jsx-2yZ49X ${test && "test"}`} />
+      <div class={`jsx-2yZ49X ${test && test("test")}`} />
+      <div class={`jsx-2yZ49X ${undefined}`} />
+      <div class={`jsx-2yZ49X ${null}`} />
+      <div class={`jsx-2yZ49X ${false}`} />
+      <div class={"jsx-2yZ49X test"} data-test />
+      <div data-test class={"jsx-2yZ49X test"} />
+      <div class={"jsx-2yZ49X test"} data-test="test" />
+      <div class={"jsx-2yZ49X test"} {...props} />
+      <div class={"jsx-2yZ49X test"} {...props} {...rest} />
+      <div class={`jsx-2yZ49X test ${test ? "test" : ""}`} {...props} />
+      <div class={`jsx-2yZ49X ${test && test("test")}`} {...props} />
+      <div class={`jsx-2yZ49X ${test && test("test") && "test"}`} {...props} />
+      <div class={`jsx-2yZ49X ${test && test("test") && test2("test")}`} {...props} />
+      <div {...props} class={"jsx-2yZ49X test"} />
+      <div {...props} {...rest} class={"jsx-2yZ49X test"} />
+      <div {...props} class={"jsx-2yZ49X test"} {...rest} />
+      <div {...props} class="jsx-2yZ49X" />
+      <div {...props} {...rest} class="jsx-2yZ49X" />
+      <div {...props} data-foo {...rest} class="jsx-2yZ49X" />
+      <div {...props} class={"jsx-2yZ49X test"} data-foo {...rest} />
+      <div {...{ id: "foo" }} class="jsx-2yZ49X" />
+      <div {...{ class: "foo" }} class="jsx-2yZ49X" />
+      <div {...{ class: "foo" }} class="jsx-2yZ49X test" />
+      <div class="jsx-2yZ49X test" {...{ class: "foo" }} />
+      <div {...{ class: "foo" }} {...bar} class="jsx-2yZ49X" />
+      <div {...{ class: "foo" }} {...bar} class="jsx-2yZ49X test" />
+      <div class="jsx-2yZ49X test" {...{ class: "foo" }} {...bar} />
+      <div class="jsx-2yZ49X test" {...{ class: props.class }} />
+      <div class="jsx-2yZ49X test" {...{ class: props.class }} {...bar} />
+      <div class="jsx-2yZ49X test" {...bar} {...{ class: props.class }} />
+      <div class="jsx-2yZ49X test" {...bar()} />
+      <Element />
+      <Element class="test" />
+      <Element {...props} />
+      <Style scoped>{`div.jsx-2yZ49X{color:red}`}</Style>
+    </div>
+  )
+}
