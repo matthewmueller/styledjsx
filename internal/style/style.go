@@ -12,18 +12,6 @@ import (
 	"github.com/matthewmueller/styledjsx/internal/murmur"
 )
 
-// func Rewrite(path, component string, minify bool, script *ast.Script) (err error) {
-// 	v := &Visitor{
-// 		Path:       path,
-// 		Prefix:     "jsx-",
-// 		Attr:       "class",
-// 		ImportName: component,
-// 		Minify:     minify,
-// 	}
-// 	script.Visit(v)
-// 	return v.err
-// }
-
 type Visitor struct {
 	Path       string           // the path to the file
 	Prefix     string           // the prefix for the scoped styles (e.g. jsx-)
