@@ -29,8 +29,6 @@ github.com/matthewmueller/css v0.0.2 h1:6cOv1s+F+fkmAIIEQVq4mhl7fqU23VloFY5BKMH7
 github.com/matthewmueller/css v0.0.2/go.mod h1:+fR/nnzjQ8IffA72mTgpTPlSK/A2m1ixC+SJ2kaeM2o=
 github.com/matthewmueller/diff v0.0.2 h1:AsPXHCRHDwjgURRvkHCaQp8OXkWY49lPATPTNStTU0w=
 github.com/matthewmueller/diff v0.0.2/go.mod h1:8V0QzU6IE7fmlOlE7NtXAeMkjB8cI9Cx4b1B7LNrz2U=
-github.com/matthewmueller/jsx v0.0.3 h1:m7d8r2bCDnDLM7CS3BMxOrh7qGThdcQsMRYtoK+DuHs=
-github.com/matthewmueller/jsx v0.0.3/go.mod h1:umuNMgnS0vCxX6407C5nDSXVmqeLH5hEO6ClJXi7j/4=
 github.com/matthewmueller/jsx v0.0.4 h1:6uKPMImvDfDwkz5XRJBNCbPqcO+4u7qSCORVCTyPJGM=
 github.com/matthewmueller/jsx v0.0.4/go.mod h1:umuNMgnS0vCxX6407C5nDSXVmqeLH5hEO6ClJXi7j/4=
 github.com/pkg/diff v0.0.0-20210226163009-20ebb0f2a09e/go.mod h1:pJLUxLENpZxwdsKMEsNbx1VGcRFpLqf3715MtcvvzbA=
