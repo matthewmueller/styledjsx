@@ -1,3 +1,7 @@
+# 0.0.5 / 2024-04-07
+
+- add tests for global and keyframes
+
 # 0.0.4 / 2024-04-07
 
 - add an id for disambiguation
