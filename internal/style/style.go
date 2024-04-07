@@ -67,37 +67,36 @@ func isScopedStyle(e *ast.Element) bool {
 	return false
 }
 
-func getText(f ast.Fragment) string {
-	switch f := f.(type) {
-	case *ast.Text:
-		return f.Value
-	case *ast.Expr:
-		sb := strings.Builder{}
-		for _, fragment := range f.Fragments {
-			text, ok := fragment.(*ast.Text)
-			if !ok {
-				continue
+func getCSS(fragments []ast.Fragment) string {
+	sb := new(strings.Builder)
+	for _, fragment := range fragments {
+		switch fragment := fragment.(type) {
+		case *ast.Text:
+			sb.WriteString(strings.TrimSpace(fragment.Value))
+		case *ast.Expr:
+			for _, fragment := range fragment.Fragments {
+				text, ok := fragment.(*ast.Text)
+				if !ok {
+					continue
+				}
+				value := strings.TrimSpace(text.Value)
+				if !isString(value) {
+					continue
+				}
+				sb.WriteString(strings.Trim(value, "`\"'"))
 			}
-			value := strings.TrimSpace(text.Value)
-			if !isString(value) {
-				continue
-			}
-			sb.WriteString(strings.Trim(value, "`\"'"))
 		}
-		return sb.String()
-	default:
-		return ""
 	}
+	return strings.TrimSpace(sb.String())
 }
 
-func setText(f ast.Fragment, text string) {
-	switch f := f.(type) {
-	case *ast.Text:
-		f.Value = text
-	case *ast.Expr:
-		f.Fragments = []ast.Fragment{
-			&ast.Text{Value: "`" + strings.ReplaceAll(text, "`", "\\`") + "`"},
-		}
+func setCSS(style *ast.Element, css string) {
+	style.Children = []ast.Fragment{
+		&ast.Expr{
+			Fragments: []ast.Fragment{
+				&ast.Text{Value: "`" + strings.ReplaceAll(strings.TrimSpace(css), "`", "\\`") + "`"},
+			},
+		},
 	}
 }
 
@@ -130,7 +129,7 @@ func (v *Visitor) VisitElement(e *ast.Element) {
 }
 
 func (v *Visitor) updateScopedStyle(style *ast.Element) (class string, err error) {
-	text := strings.TrimSpace(getText(style.Children[0]))
+	text := getCSS(style.Children)
 	if text == "" {
 		return "", nil
 	}
@@ -163,7 +162,7 @@ func (v *Visitor) updateScopedStyle(style *ast.Element) (class string, err error
 	}
 	// update the <style scoped> element with the component name
 	style.Name = v.ImportName
-	setText(style.Children[0], strings.TrimSpace(css))
+	setCSS(style, css)
 	return class, nil
 }
 

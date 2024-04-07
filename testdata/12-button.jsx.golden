@@ -1,0 +1,9 @@
+import Style from "styled-jsx";
+export default function Button(props) {
+  return (
+    <button href={props.href} class="jsx-3JyQ1u">
+      {props.children}
+      <Style jsx>{`button.jsx-3JyQ1u{outline:none;height:33px;border:1px solid #ccced1;text-decoration:none;background:#fff;border-radius:6px;padding:6px 11px 8px;display:inline-block;user-select:none;color:#3b434b;font-size:15px;font-weight:700;cursor:pointer}button.jsx-3JyQ1u:hover,button.jsx-3JyQ1u:active{border-color:#aaa}`}</Style>
+    </button>
+  )
+}
