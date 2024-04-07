@@ -3,6 +3,6 @@ const Test = () => (
   <div class="jsx-465mAE">
     <span class="jsx-465mAE">test</span>
     <Component />
-    <Style jsx>{`span.jsx-465mAE{color:red}`}</Style>
+    <Style jsx id="jsx-465mAE">{`span.jsx-465mAE{color:red}`}</Style>
   </div>
 )

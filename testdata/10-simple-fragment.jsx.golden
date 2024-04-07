@@ -2,6 +2,6 @@ import Style from "styled-jsx";
 export default () => (
   <>
     <p class="jsx-Gd7wZ">This should throw in babel 6</p>
-    <Style jsx>{`p.jsx-Gd7wZ{color:orange}`}</Style>
+    <Style jsx id="jsx-Gd7wZ">{`p.jsx-Gd7wZ{color:orange}`}</Style>
   </>
 )

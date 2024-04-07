@@ -4,6 +4,6 @@ export default () => (
     <p class="jsx-1CO9YM">test</p>
     <p class="jsx-1CO9YM">woot</p>
     <p class="jsx-1CO9YM">woot</p>
-    <Style jsx>{`p.jsx-1CO9YM{color:red}`}</Style>
+    <Style jsx id="jsx-1CO9YM">{`p.jsx-1CO9YM{color:red}`}</Style>
   </div>
 )

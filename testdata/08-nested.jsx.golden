@@ -15,7 +15,7 @@ export default () => (
         }
       </style>
     </span>
-    <Style jsx>{`span.jsx-465mAE{color:red}`}</Style>
+    <Style jsx id="jsx-465mAE">{`span.jsx-465mAE{color:red}`}</Style>
   </div>
 )
 
@@ -45,7 +45,7 @@ export const Test = () => (
         <style jsx>{styles}</style> {/* this should not be transpiled */}
       </Component>
     </span>
-    <Style jsx>{`span.jsx-465mAE{color:red}`}</Style>
+    <Style jsx id="jsx-465mAE">{`span.jsx-465mAE{color:red}`}</Style>
     <style jsx>{styles}</style>
   </div>
 )

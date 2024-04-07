@@ -3,6 +3,6 @@ export default () => (
   <div class="jsx-1CO9YM">
     <p class="jsx-1CO9YM">woot</p>
     <style dangerouslySetInnerHTML={{ __html: `body { margin: 0; }` }} class="jsx-1CO9YM" />
-    <Style jsx>{`p.jsx-1CO9YM{color:red}`}</Style>
+    <Style jsx id="jsx-1CO9YM">{`p.jsx-1CO9YM{color:red}`}</Style>
   </div>
 )

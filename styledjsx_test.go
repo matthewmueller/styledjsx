@@ -94,7 +94,7 @@ export default function () {
 	export default function () {
 		return (
 			<main class="jsx-2sQbAZ">
-				<Style scoped>{` + "`" + `main.jsx-2sQbAZ{-webkit-appearance:none;appearance:none;-webkit-user-select:none;-khtml-user-select:none;user-select:none;position:-webkit-sticky;position:sticky}` + "`" + `}</Style>
+				<Style scoped id="jsx-2sQbAZ">{` + "`" + `main.jsx-2sQbAZ{-webkit-appearance:none;appearance:none;-webkit-user-select:none;-khtml-user-select:none;user-select:none;position:-webkit-sticky;position:sticky}` + "`" + `}</Style>
 			</main>
 		)
 	}
@@ -129,7 +129,7 @@ export default () => (
 	// export default () => (
 	//   <main class="jsx-8mUTT main">
 	//     <h1 class="jsx-8mUTT">hello</h1>
-	//     <Style scoped>{`.main.jsx-8mUTT{background:#00f}h1.jsx-8mUTT{color:red}`}</Style>
+	//     <Style scoped id="jsx-8mUTT">{`.main.jsx-8mUTT{background:#00f}h1.jsx-8mUTT{color:red}`}</Style>
 	//   </main>
 	// )
 }

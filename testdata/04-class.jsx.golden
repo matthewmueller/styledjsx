@@ -4,7 +4,7 @@ export default class {
     return (
       <div class="jsx-4suyyD">
         <p class="jsx-4suyyD">test</p>
-        <Style scoped>{`p.jsx-4suyyD{color:red}`}</Style>
+        <Style scoped id="jsx-4suyyD">{`p.jsx-4suyyD{color:red}`}</Style>
       </div>
     )
   }

@@ -51,7 +51,7 @@ export default () => {
       <Element />
       <Element class="test" />
       <Element {...props} />
-      <Style scoped>{`div.jsx-2yZ49X{color:red}`}</Style>
+      <Style scoped id="jsx-2yZ49X">{`div.jsx-2yZ49X{color:red}`}</Style>
     </div>
   )
 }
