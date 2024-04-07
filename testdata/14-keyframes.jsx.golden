@@ -1,0 +1,15 @@
+import Style from "styled-jsx";
+import SlackButton from "./slack-button"
+import Button from "./button"
+
+export default function Header({ success }) {
+  return (
+    <header class="jsx-1V6cwZ">
+      <div className="jsx-1V6cwZ scene">
+        <div className="jsx-1V6cwZ cloud-1" />
+        <div className="jsx-1V6cwZ cloud-2" />
+      </div>
+      <Style jsx id="jsx-1V6cwZ">{`.cloud-1.jsx-1V6cwZ{background-image:url(/static/images/cloud-1.svg);position:absolute;width:159px;height:92px;top:50px;right:800px;animation:float-jsx1V6cwZ infinite 5s ease-in}.cloud-2.jsx-1V6cwZ{background-image:url(/static/images/cloud-2.svg);position:absolute;height:128px;width:228px;right:500px;top:30px;animation:float-jsx1V6cwZ infinite 5s ease-in}@keyframes float-jsx1V6cwZ{0%{transform:translate(0)}50%{transform:translate(7px) rotate(5deg)}}`}</Style>
+    </header>
+  )
+}

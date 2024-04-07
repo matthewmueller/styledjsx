@@ -1,0 +1,16 @@
+import Style from "styled-jsx";
+import SlackButton from "./slack-button"
+import Button from "./button"
+
+export default function Header({ success }) {
+  return (
+    <header class="jsx-zVKDd">
+      <nav className="jsx-zVKDd buttons">
+        {/* <Button href={`mailto:${props.email}`}>Contact</Button> */}
+        <Button href="/faq">FAQ</Button>
+        <SlackButton success={success} />
+      </nav>
+      <Style jsx id="jsx-zVKDd">{`.buttons.jsx-zVKDd{display:flex;align-items:center;position:absolute;right:10px;top:20px}.buttons.jsx-zVKDd>*{margin-right:15px}.buttons.jsx-zVKDd>*:last-child{margin-right:0}`}</Style>
+    </header>
+  )
+}

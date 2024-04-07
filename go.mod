@@ -5,7 +5,7 @@ go 1.22.0
 require (
 	github.com/evanw/esbuild v0.20.2
 	github.com/matryer/is v1.4.0
-	github.com/matthewmueller/css v0.0.2
+	github.com/matthewmueller/css v0.0.4
 	github.com/matthewmueller/diff v0.0.2
 	github.com/matthewmueller/jsx v0.0.4
 )

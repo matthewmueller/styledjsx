@@ -25,8 +25,8 @@ github.com/lithammer/dedent v1.1.0 h1:VNzHMVCBNG1j0fh3OrsFRkVUwStdDArbgBWoPAffkt
 github.com/lithammer/dedent v1.1.0/go.mod h1:jrXYCQtgg0nJiN+StA2KgR7w6CiQNv9Fd/Z9BP0jIOc=
 github.com/matryer/is v1.4.0 h1:sosSmIWwkYITGrxZ25ULNDeKiMNzFSr4V/eqBQP0PeE=
 github.com/matryer/is v1.4.0/go.mod h1:8I/i5uYgLzgsgEloJE1U6xx5HkBQpAZvepWuujKwMRU=
-github.com/matthewmueller/css v0.0.2 h1:6cOv1s+F+fkmAIIEQVq4mhl7fqU23VloFY5BKMH7xJQ=
-github.com/matthewmueller/css v0.0.2/go.mod h1:+fR/nnzjQ8IffA72mTgpTPlSK/A2m1ixC+SJ2kaeM2o=
+github.com/matthewmueller/css v0.0.4 h1:gvV6mBFhnfpdshrxYZYhWWwR1RnM7OF+nW7+tiSOaak=
+github.com/matthewmueller/css v0.0.4/go.mod h1:+fR/nnzjQ8IffA72mTgpTPlSK/A2m1ixC+SJ2kaeM2o=
 github.com/matthewmueller/diff v0.0.2 h1:AsPXHCRHDwjgURRvkHCaQp8OXkWY49lPATPTNStTU0w=
 github.com/matthewmueller/diff v0.0.2/go.mod h1:8V0QzU6IE7fmlOlE7NtXAeMkjB8cI9Cx4b1B7LNrz2U=
 github.com/matthewmueller/jsx v0.0.4 h1:6uKPMImvDfDwkz5XRJBNCbPqcO+4u7qSCORVCTyPJGM=
