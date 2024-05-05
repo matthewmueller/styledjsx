@@ -1,3 +1,7 @@
+# 0.0.6 / 2024-05-04
+
+- ignore anything inside <head>
+
 # 0.0.5 / 2024-04-07
 
 - add tests for global and keyframes
