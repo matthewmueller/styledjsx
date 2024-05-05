@@ -133,3 +133,42 @@ export default () => (
 	//   </main>
 	// )
 }
+
+func TestIgnoreHead(t *testing.T) {
+	input := `
+export default function () {
+	return (
+		<main>
+			<head>
+				<title>hello</title>
+			</head>
+			<style scoped>{` + "`" + `
+				main {
+					background: blue;
+				}
+			` + "`" + `}</style>
+		</main>
+	)
+}
+	`
+	rewriter := styledjsx.New()
+	actual, err := rewriter.Rewrite("input.jsx", string(input))
+	if err != nil {
+		t.Fatal(err)
+	}
+	expected := `
+	import Style from "styled-jsx";
+
+	export default function () {
+		return (
+			<main class="jsx-1zKxzN">
+				<head>
+					<title>hello</title>
+				</head>
+				<Style scoped id="jsx-1zKxzN">{` + "`" + `main.jsx-1zKxzN { background: blue }` + "`" + `}</Style>
+			</main>
+		)
+	}
+	`
+	diff.TestContent(t, actual, expected)
+}
