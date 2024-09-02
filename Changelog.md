@@ -1,3 +1,7 @@
+# 0.0.7 / 2024-09-02
+
+- improve nested expression support
+
 # 0.0.6 / 2024-05-04
 
 - ignore anything inside <head>
