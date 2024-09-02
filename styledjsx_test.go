@@ -53,7 +53,7 @@ func equalFile(t *testing.T, path string) {
 }
 
 func TestData(t *testing.T) {
-	files, err := filepath.Glob("testdata/*.jsx")
+	files, err := filepath.Glob("testdata/*.[jt]sx")
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -166,6 +166,45 @@ export default function () {
 					<title>hello</title>
 				</head>
 				<Style scoped id="jsx-1zKxzN">{` + "`" + `main.jsx-1zKxzN { background: blue }` + "`" + `}</Style>
+			</main>
+		)
+	}
+	`
+	diff.TestContent(t, actual, expected)
+}
+
+func TestInnerExprs(t *testing.T) {
+	input := `
+export default function () {
+	return (
+		<main>
+			<h1>another</h1>
+			{test && (<div class="body" />)}
+			<Footer inner={<div class="whatever"></div>} />
+			<style scoped>{` + "`" + `
+				.body {
+					background: blue;
+				}
+			` + "`" + `}</style>
+		</main>
+	)
+}
+	`
+	rewriter := styledjsx.New()
+	actual, err := rewriter.Rewrite("input.jsx", string(input))
+	if err != nil {
+		t.Fatal(err)
+	}
+	expected := `
+	import Style from "styled-jsx";
+
+	export default function () {
+		return (
+			<main class="jsx-3XmqP0">
+				<h1 class="jsx-3XmqP0">another</h1>
+				{test && (<div class="jsx-3XmqP0 body" />)}
+				<Footer inner={<div class="jsx-3XmqP0 whatever"></div>} />
+				<Style scoped id="jsx-3XmqP0">{` + "`" + `.body.jsx-3XmqP0 { background: blue }` + "`" + `}</Style>
 			</main>
 		)
 	}

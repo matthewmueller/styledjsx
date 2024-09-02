@@ -22,13 +22,26 @@ type classVisitor struct {
 	err   error
 }
 
-func (v *classVisitor) VisitScript(n *ast.Script)           {}
-func (v *classVisitor) VisitText(n *ast.Text)               {}
-func (v *classVisitor) VisitField(n *ast.Field)             {}
+func (v *classVisitor) VisitScript(n *ast.Script) {
+	for _, fragment := range n.Body {
+		fragment.Visit(v)
+	}
+}
+func (v *classVisitor) VisitText(n *ast.Text) {}
+func (v *classVisitor) VisitField(n *ast.Field) {
+	if n.Value != nil {
+		n.Value.Visit(v)
+	}
+}
+
 func (v *classVisitor) VisitStringValue(n *ast.StringValue) {}
-func (v *classVisitor) VisitExpr(n *ast.Expr)               {}
-func (v *classVisitor) VisitBoolValue(n *ast.BoolValue)     {}
-func (v *classVisitor) VisitComment(n *ast.Comment)         {}
+func (v *classVisitor) VisitExpr(n *ast.Expr) {
+	for _, fragment := range n.Fragments {
+		fragment.Visit(v)
+	}
+}
+func (v *classVisitor) VisitBoolValue(n *ast.BoolValue) {}
+func (v *classVisitor) VisitComment(n *ast.Comment)     {}
 
 func (v *classVisitor) VisitElement(e *ast.Element) {
 	// ignore anything inside <head>

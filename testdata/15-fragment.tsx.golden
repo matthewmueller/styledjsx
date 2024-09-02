@@ -1,0 +1,37 @@
+import Style from "styled-jsx";
+//@ts-nocheck
+import { format as timeago } from "timeago.js"
+import { useSignal } from "@preact/signals"
+import type { Comment } from "./types"
+
+type Props = {
+  comment: Comment
+}
+
+export default function Comment({ comment }: Props) {
+  const show = useSignal(true)
+
+  function toggle() {
+    show.value = !show.value
+  }
+
+  return (
+    <div class="jsx-43YyXX comment">
+      <div class="jsx-43YyXX header">
+        <a class="jsx-43YyXX fold" href="#" onClick={toggle}>
+          {show.value ? "↓" : `→`}
+        </a>{" "}
+        {comment.author} {timeago(comment.created_at)}
+      </div>
+      {show.value && (
+        <>
+          <div class="jsx-43YyXX body" dangerouslySetInnerHTML={{ __html: comment.text }} />
+          {(comment.children || []).map((child, i) => (
+            <Comment key={i} comment={child} />
+          ))}
+        </>
+      )}
+      <Style jsx id="jsx-43YyXX">{`.comment.jsx-43YyXX{padding:10px}.header.jsx-43YyXX{color:gray;font-size:75%}.fold.jsx-43YyXX{text-decoration:none;color:inherit}.body.jsx-43YyXX{padding-left:13px;font-size:14px}.body.jsx-43YyXX a{text-decoration:none;color:inherit}.body.jsx-43YyXX a:hover{text-decoration:underline}`}</Style>
+    </div>
+  )
+}

@@ -7,7 +7,7 @@ require (
 	github.com/matryer/is v1.4.0
 	github.com/matthewmueller/css v0.0.4
 	github.com/matthewmueller/diff v0.0.2
-	github.com/matthewmueller/jsx v0.0.4
+	github.com/matthewmueller/jsx v0.0.7
 )
 
 require (
