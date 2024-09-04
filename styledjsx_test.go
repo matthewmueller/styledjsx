@@ -214,6 +214,8 @@ export default function () {
 
 func TestTempl(t *testing.T) {
 	input := `
+package view
+
 templ Story(story *hackernews.Story) {
   <div class="story">
     <div>
@@ -249,27 +251,28 @@ templ Story(story *hackernews.Story) {
 		t.Fatal(err)
 	}
 	expected := `
-    import Style from "styled-jsx";
+import Style from "styled-jsx";
 
-    templ Story(story *hackernews.Story) {
-      <div class="jsx-4GjC3K story">
-        <div class="jsx-4GjC3K">
-          <a class="jsx-4GjC3K">
-            { story.Title }
-          </a>
-          if story.URL  != "" {
-            <a class="jsx-4GjC3K url" href={ templ.URL(story.URL) }>({ formatURL(story.URL) })</a>
-          }
-        </div>
-        <div class="jsx-4GjC3K meta">
-          { strconv.Itoa(story.Points) } points by { story.Author } • { " " }
-          @Time(story.CreatedAt)
-        </div>
-        <Style scoped id="jsx-4GjC3K">{` + "`" + `.story.jsx-4GjC3K { background: red }
-    .url.jsx-4GjC3K { text-transform: none }
-    .meta.jsx-4GjC3K { padding: 10px }` + "`" + `}</Style>
-      </div>
-    }
-  `
+package view
+
+templ Story(story *hackernews.Story) {
+  <div class="jsx-4GjC3K story">
+    <div class="jsx-4GjC3K">
+      <a class="jsx-4GjC3K">
+        { story.Title }
+      </a>
+      if story.URL  != "" {
+        <a class="jsx-4GjC3K url" href={ templ.URL(story.URL) }>({ formatURL(story.URL) })</a>
+      }
+    </div>
+    <div class="jsx-4GjC3K meta">
+      { strconv.Itoa(story.Points) } points by { story.Author } • { " " }
+      @Time(story.CreatedAt)
+    </div>
+    <Style scoped id="jsx-4GjC3K">{` + "`" + `.story.jsx-4GjC3K { background: red }
+.url.jsx-4GjC3K { text-transform: none }
+.meta.jsx-4GjC3K { padding: 10px }` + "`" + `}</Style>
+  </div>
+}`
 	diff.TestContent(t, actual, expected)
 }
