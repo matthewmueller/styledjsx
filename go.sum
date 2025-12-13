@@ -29,8 +29,8 @@ github.com/matthewmueller/css v0.0.4 h1:gvV6mBFhnfpdshrxYZYhWWwR1RnM7OF+nW7+tiSO
 github.com/matthewmueller/css v0.0.4/go.mod h1:+fR/nnzjQ8IffA72mTgpTPlSK/A2m1ixC+SJ2kaeM2o=
 github.com/matthewmueller/diff v0.0.2 h1:AsPXHCRHDwjgURRvkHCaQp8OXkWY49lPATPTNStTU0w=
 github.com/matthewmueller/diff v0.0.2/go.mod h1:8V0QzU6IE7fmlOlE7NtXAeMkjB8cI9Cx4b1B7LNrz2U=
-github.com/matthewmueller/jsx v0.0.7 h1:hLYpKt/zG7ih2pFUiXiW0CpZmCUzckbM+hAKqpSXe8U=
-github.com/matthewmueller/jsx v0.0.7/go.mod h1:umuNMgnS0vCxX6407C5nDSXVmqeLH5hEO6ClJXi7j/4=
+github.com/matthewmueller/jsx v0.0.11 h1:EeAtZpxd3ibPZlUOmme9T3FNUSt6wX2+DJcFAWGzlx8=
+github.com/matthewmueller/jsx v0.0.11/go.mod h1:umuNMgnS0vCxX6407C5nDSXVmqeLH5hEO6ClJXi7j/4=
 github.com/pkg/diff v0.0.0-20210226163009-20ebb0f2a09e/go.mod h1:pJLUxLENpZxwdsKMEsNbx1VGcRFpLqf3715MtcvvzbA=
 github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZbAQM=
 github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=

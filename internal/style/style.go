@@ -2,6 +2,7 @@ package style
 
 import (
 	"errors"
+	"strconv"
 	"strings"
 
 	esbuild "github.com/evanw/esbuild/pkg/api"
@@ -163,8 +164,10 @@ func (v *Visitor) updateScopedStyle(style *ast.Element) (class string, err error
 	// update the <style scoped> element with the component name
 	style.Name = v.ImportName
 	style.Attrs = append(style.Attrs, &ast.Field{
-		Name:  "id",
-		Value: &ast.StringValue{Value: class},
+		Name: "id",
+		Value: &ast.StringValue{
+			Raw: strconv.Quote(class),
+		},
 	})
 	setCSS(style, css)
 	return class, nil

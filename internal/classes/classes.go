@@ -1,6 +1,7 @@
 package classes
 
 import (
+	"strconv"
 	"strings"
 
 	"github.com/matthewmueller/jsx/ast"
@@ -66,8 +67,10 @@ func (v *classVisitor) VisitElement(e *ast.Element) {
 	}
 	if !hasClass {
 		e.Attrs = append(e.Attrs, &ast.Field{
-			Name:  v.attr,
-			Value: &ast.StringValue{Value: v.class},
+			Name: v.attr,
+			Value: &ast.StringValue{
+				Raw: strconv.Quote(v.class),
+			},
 		})
 	}
 	for _, child := range e.Children {
@@ -85,7 +88,7 @@ func (v *classVisitor) updateClassField(f *ast.Field) {
 }
 
 func updateStringValue(value *ast.StringValue, class string) {
-	value.Value = class + " " + value.Value
+	value.Raw = strconv.Quote(class + " " + value.Value)
 }
 
 func updateExpr(expr *ast.Expr, class string) {

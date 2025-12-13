@@ -17,6 +17,7 @@ func New() *Rewriter {
 			Path:      "styled-jsx",
 			IsDefault: true,
 		},
+		Attr:   "class",
 		Minify: false,
 	}
 }
@@ -40,6 +41,7 @@ func (i *Import) String() string {
 
 type Rewriter struct {
 	Import Import
+	Attr   string
 	// Used by ESBuild
 	Minify  bool
 	Engines []esbuild.Engine
@@ -60,7 +62,7 @@ func (r *Rewriter) RewriteAST(path string, script *ast.Script) error {
 	visitor := &style.Visitor{
 		Path:       path,
 		Prefix:     "jsx-",
-		Attr:       "class",
+		Attr:       r.Attr,
 		ImportName: r.Import.Name,
 		Minify:     r.Minify,
 		Engines:    r.Engines,
