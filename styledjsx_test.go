@@ -211,3 +211,118 @@ export default function () {
 	`
 	diff.TestContent(t, actual, expected)
 }
+
+func TestRemoverScoped(t *testing.T) {
+	input := `
+export default function () {
+	return (
+		<main>
+			<h1>another</h1>
+			{test && (<div class="body" />)}
+			<Footer inner={<div class="whatever"></div>} />
+			<style scoped>{` + "`" + `
+				.body {
+					background: blue;
+				}
+			` + "`" + `}</style>
+		</main>
+	)
+}
+	`
+	rewriter := styledjsx.New()
+	actual, err := rewriter.Remove("input.jsx", string(input))
+	if err != nil {
+		t.Fatal(err)
+	}
+	expected := `
+	export default function () {
+		return (
+			<main>
+				<h1>another</h1>
+				{test && (<div class="body" />)}
+				<Footer inner={<div class="whatever"></div>} />
+
+			</main>
+		)
+	}
+	`
+	diff.TestContent(t, actual, expected)
+}
+
+func TestRemoverJSX(t *testing.T) {
+	input := `
+export default function () {
+	return (
+		<main>
+			<h1>another</h1>
+			{test && (<div class="body" />)}
+			<Footer inner={<div class="whatever"></div>} />
+			<style jsx>{` + "`" + `
+				.body {
+					background: blue;
+				}
+			` + "`" + `}</style>
+		</main>
+	)
+}
+	`
+	rewriter := styledjsx.New()
+	actual, err := rewriter.Remove("input.jsx", string(input))
+	if err != nil {
+		t.Fatal(err)
+	}
+	expected := `
+	export default function () {
+		return (
+			<main>
+				<h1>another</h1>
+				{test && (<div class="body" />)}
+				<Footer inner={<div class="whatever"></div>} />
+
+			</main>
+		)
+	}
+	`
+	diff.TestContent(t, actual, expected)
+}
+
+func TestRemoverIgnore(t *testing.T) {
+	input := `
+export default function () {
+	return (
+		<main>
+			<h1>another</h1>
+			{test && (<div class="body" />)}
+			<Footer inner={<div class="whatever"></div>} />
+			<style>{` + "`" + `
+				.body {
+					background: blue;
+				}
+			` + "`" + `}</style>
+		</main>
+	)
+}
+	`
+	rewriter := styledjsx.New()
+	actual, err := rewriter.Remove("input.jsx", string(input))
+	if err != nil {
+		t.Fatal(err)
+	}
+	expected := `
+	export default function () {
+		return (
+			<main>
+				<h1>another</h1>
+				{test && (<div class="body" />)}
+				<Footer inner={<div class="whatever"></div>} />
+				<style>{` + "`" + `
+					.body {
+						background: blue;
+					}
+				` + "`" + `}</style>
+			</main>
+		)
+	}
+	`
+	diff.TestContent(t, actual, expected)
+}
