@@ -1,3 +1,8 @@
+# 0.0.11 / 2025-12-13
+
+- remove jsx-\* on scoped style tags.
+- remove jsx and scoped attribute on cleared out style tags
+
 # 0.0.10 / 2025-12-13
 
 - remove Remove and swap for rewriting to empty style tag
