@@ -1,3 +1,7 @@
+# 0.0.10 / 2025-12-13
+
+- remove Remove and swap for rewriting to empty style tag
+
 # 0.0.9 / 2025-12-13
 
 - add support for removing `<style scoped>` and `<style jsx>`
