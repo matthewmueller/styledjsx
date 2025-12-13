@@ -71,28 +71,11 @@ func (r *Rewriter) RewriteAST(path string, script *ast.Script) error {
 		return err
 	}
 	// Add the import statement to the top of the file
-	script.Body = append([]ast.Fragment{
-		&ast.Text{Value: r.Import.String()}},
-		script.Body...,
-	)
-	return nil
-}
-
-func (r *Rewriter) Remove(path, code string) (string, error) {
-	ast, err := jsx.Parse(path, code)
-	if err != nil {
-		return "", fmt.Errorf("styledjsx: unable to parse %q: %w", path, err)
-	}
-	if err := r.RemoveAST(path, ast); err != nil {
-		return "", fmt.Errorf("styledjsx: unable to rewrite %q: %w", path, err)
-	}
-	return ast.String(), nil
-}
-
-func (r *Rewriter) RemoveAST(path string, script *ast.Script) error {
-	remover := &style.Remover{}
-	if err := remover.Remove(script); err != nil {
-		return err
+	if r.Import.Path != "" && r.Import.Name != "" {
+		script.Body = append([]ast.Fragment{
+			&ast.Text{Value: r.Import.String()}},
+			script.Body...,
+		)
 	}
 	return nil
 }

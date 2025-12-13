@@ -230,21 +230,23 @@ export default function () {
 }
 	`
 	rewriter := styledjsx.New()
-	actual, err := rewriter.Remove("input.jsx", string(input))
+	rewriter.Import.Path = ""
+	rewriter.Import.Name = ""
+	actual, err := rewriter.Rewrite("input.jsx", string(input))
 	if err != nil {
 		t.Fatal(err)
 	}
 	expected := `
-	export default function () {
-		return (
-			<main>
-				<h1>another</h1>
-				{test && (<div class="body" />)}
-				<Footer inner={<div class="whatever"></div>} />
-
-			</main>
-		)
-	}
+		export default function () {
+			return (
+				<main class="jsx-3XmqP0">
+					<h1 class="jsx-3XmqP0">another</h1>
+					{test && (<div class="jsx-3XmqP0 body" />)}
+					<Footer inner={<div class="jsx-3XmqP0 whatever"></div>} />
+					<style scoped class="jsx-3XmqP0"></style>
+				</main>
+			)
+		}
 	`
 	diff.TestContent(t, actual, expected)
 }
@@ -267,18 +269,20 @@ export default function () {
 }
 	`
 	rewriter := styledjsx.New()
-	actual, err := rewriter.Remove("input.jsx", string(input))
+	rewriter.Import.Path = ""
+	rewriter.Import.Name = ""
+	actual, err := rewriter.Rewrite("input.jsx", string(input))
 	if err != nil {
 		t.Fatal(err)
 	}
 	expected := `
 	export default function () {
 		return (
-			<main>
-				<h1>another</h1>
-				{test && (<div class="body" />)}
-				<Footer inner={<div class="whatever"></div>} />
-
+			<main class="jsx-3XmqP0">
+				<h1 class="jsx-3XmqP0">another</h1>
+				{test && (<div class="jsx-3XmqP0 body" />)}
+				<Footer inner={<div class="jsx-3XmqP0 whatever"></div>} />
+				<style jsx class="jsx-3XmqP0"></style>
 			</main>
 		)
 	}
@@ -304,7 +308,9 @@ export default function () {
 }
 	`
 	rewriter := styledjsx.New()
-	actual, err := rewriter.Remove("input.jsx", string(input))
+	rewriter.Import.Path = ""
+	rewriter.Import.Name = ""
+	actual, err := rewriter.Rewrite("input.jsx", string(input))
 	if err != nil {
 		t.Fatal(err)
 	}

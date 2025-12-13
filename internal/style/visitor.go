@@ -161,6 +161,13 @@ func (v *Visitor) updateScopedStyle(style *ast.Element) (class string, err error
 		}
 		css = string(result.Code)
 	}
+	// If the import name is empty, clear out the <style> tag
+	// This is intended to support client-side where the styles were already
+	// injected in the head.
+	if v.ImportName == "" {
+		style.Children = []ast.Fragment{}
+		return class, nil
+	}
 	// update the <style scoped> element with the component name
 	style.Name = v.ImportName
 	style.Attrs = append(style.Attrs, &ast.Field{
