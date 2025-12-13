@@ -1,3 +1,7 @@
+# 0.0.8 / 2025-12-13
+
+- fix styledjsx for newer versions of jsx (>=0.0.8)
+
 # 0.0.7 / 2024-09-02
 
 - improve nested expression support
