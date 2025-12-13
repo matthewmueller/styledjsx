@@ -1,3 +1,7 @@
+# 0.0.9 / 2025-12-13
+
+- add support for removing `<style scoped>` and `<style jsx>`
+
 # 0.0.8 / 2025-12-13
 
 - fix styledjsx for newer versions of jsx (>=0.0.8)
