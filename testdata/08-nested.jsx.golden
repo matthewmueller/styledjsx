@@ -5,7 +5,7 @@ export default () => (
   <div class="jsx-465mAE">
     <span class="jsx-465mAE">
       test
-      <style jsx class="jsx-465mAE">
+      <style jsx>
         {
           `
             div {

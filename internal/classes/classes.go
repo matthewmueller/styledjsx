@@ -45,8 +45,8 @@ func (v *classVisitor) VisitBoolValue(n *ast.BoolValue) {}
 func (v *classVisitor) VisitComment(n *ast.Comment)     {}
 
 func (v *classVisitor) VisitElement(e *ast.Element) {
-	// ignore anything inside <head>
-	if e.Name == "head" {
+	// ignore anything inside <head> or <style>
+	if e.Name == "head" || e.Name == "style" {
 		return
 	}
 	if len(e.Name) == 0 || !isLower(e.Name[0]) {

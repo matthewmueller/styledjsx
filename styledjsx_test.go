@@ -243,7 +243,7 @@ export default function () {
 					<h1 class="jsx-3XmqP0">another</h1>
 					{test && (<div class="jsx-3XmqP0 body" />)}
 					<Footer inner={<div class="jsx-3XmqP0 whatever"></div>} />
-					<style scoped class="jsx-3XmqP0"></style>
+					<style></style>
 				</main>
 			)
 		}
@@ -259,7 +259,7 @@ export default function () {
 			<h1>another</h1>
 			{test && (<div class="body" />)}
 			<Footer inner={<div class="whatever"></div>} />
-			<style jsx>{` + "`" + `
+			<style jsx class="nice">{` + "`" + `
 				.body {
 					background: blue;
 				}
@@ -282,7 +282,7 @@ export default function () {
 				<h1 class="jsx-3XmqP0">another</h1>
 				{test && (<div class="jsx-3XmqP0 body" />)}
 				<Footer inner={<div class="jsx-3XmqP0 whatever"></div>} />
-				<style jsx class="jsx-3XmqP0"></style>
+				<style class="nice"></style>
 			</main>
 		)
 	}

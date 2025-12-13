@@ -165,6 +165,7 @@ func (v *Visitor) updateScopedStyle(style *ast.Element) (class string, err error
 	// This is intended to support client-side where the styles were already
 	// injected in the head.
 	if v.ImportName == "" {
+		style = removeScopedAttr(style)
 		style.Children = []ast.Fragment{}
 		return class, nil
 	}
@@ -189,4 +190,16 @@ func isString(value string) bool {
 		return true
 	}
 	return false
+}
+
+func removeScopedAttr(style *ast.Element) *ast.Element {
+	newAttrs := []ast.Attr{}
+	for _, attr := range style.Attrs {
+		field, ok := attr.(*ast.Field)
+		if !ok || (field.Name != "jsx" && field.Name != "scoped") {
+			newAttrs = append(newAttrs, attr)
+		}
+	}
+	style.Attrs = newAttrs
+	return style
 }
