@@ -1,3 +1,7 @@
+# 0.0.12 / 2026-01-19
+
+- bump jsx and add modernizer
+
 # 0.0.11 / 2025-12-13
 
 - remove jsx-\* on scoped style tags.
